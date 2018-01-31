@@ -5,12 +5,33 @@
 <p>Escupidor de resultados</p>
 
 <p id="r1"></p>
+<br>
+<p id="r2"></p>
 
 <script>
+var pila = [1, 2, 3, 4]
 var a = 100;
 var b = 100;
-var x = a + b;
+
+var f = function(g) {
+  console.log('g', g);
+  var z = 0;
+  if((g % 2 == 0) || (g < 7)){
+    z = g * 2;
+  }
+    console.log('z', z);
+  return z;
+}
+
+var x = 0
+
+for(let i = 0; i < 10; i++){
+  x += f(i);
+}
+
 document.getElementById("r1").innerHTML = x;
+document.getElementById("r2").innerHTML = pila;
+
 </script>
 
 </body>
