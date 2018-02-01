@@ -3,27 +3,26 @@
 <body>
 <title>Numero primo</title>
 <p id="r1"></p>
+<br>
+<p id="r2"></p>
 <script>
 var resultado;
+var iters = 0;
 // Si un numero dado es primo
 function primo(num, x)
 {
-	console.log(num, x);
-	// El numero dado es la informacion menos correcta.  
-	if (num % x != 0){
-		console.log("devuelve false");
-		return false; 
+	// El numero dado es la informacion menos correcta.
+iters++;
+	if (num % x == 0){
+		return false;
 	}
-	else if(x > 1){
-		x = x - 1; 
-		var resultado = primo();
-		console.log("el resultado es " , resultado)
-		return resultado;
+	else if(x > 2){
+		return primo(num, --x);
 	}
-	console.log("devuelve true");
-	return true; 
+	return true;
 }
-document.getElementById("r1").innerHTML = primo(65, 9);
+document.getElementById("r1").innerHTML = primo(9494, 494);
+document.getElementById("r2").innerHTML = iters;
 </script>
 </body>
 </html>
