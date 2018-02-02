@@ -20,7 +20,7 @@
 
      function textoCalculado (str){
 
-     	// Creamos el primer for donde separaremos las vocales de las consonantes, enviamos las vocales al arreglo vocales//
+     	// Creamos el primer for dónde separaremos las vocales de las consonantes, envío las vocales al arreglo vocales//
      	 for (i = 0; i< str.length; i++){
 
 				if ((str.charAt(i) == "a") || (str.charAt(i) == "A") || 
@@ -30,21 +30,21 @@
 				(str.charAt(i) == "u") || (str.charAt(i) == "U")) {
 					vocales.push(str.charAt(i));
 				}
-		// Enviamos las consonantes totales al arreglo consonantes//
+		// Envío las consonantes totales al arreglo consonantes//
 				else{
 					consonantes.push(str.charAt(i));}
 				 }
 				 }
 	         textoCalculado(texto);
-	      // Dividimos el arrelgo consonantes en dos partes iguales, enviamos una copia  a cada arreglo nuevo, conosonantes1 y consonantes2//
+	      // Dividimos el arrelgo consonantes en dos partes iguales, enví0 una copia  a cada arreglo nuevo, conosonantes1 y consonantes2//
 			 var consonantes1 = consonantes.slice(0,consonantes.length/2); 
 			 var consonantes2 = consonantes.slice(consonantes.length/2,consonantes.length);
-    
+          // Pregunto cual de los dos arreglos entre: conosonates1 y vocales es mayor para imprimirlo en panatalla//
 			    if (consonantes1.length < vocales.length){
 			    	 document.write( "Hay más vocales que consonates")
 			    }
 			     else {
-			     	document.write( "Hay más consonantes que vocales")
+			     	document.write( consonantes1 +"!")
 			     }
 
 
