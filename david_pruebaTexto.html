@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <p>Texto vocales y consonantes</p>
+</head>
+    <body>
+            <script type="text/javascript">
+                var texto ="Después del matadero,doblando la esquina, había una cantina donde me sentaba y veía caer el sol a través de la ventana. Estaba completamente solo. Una ventana que daba a un sitio peculiar"; 
+                var cadenaVocales = []; 
+                var cadenaResto = [];
+                     for (i = 0; i < texto.length; i++) 
+                    { 
+                        if (texto[i] == "a" || texto[i] == "e" || texto[i] == "i" || texto[i] == "o" || texto[i] == "u" || texto[i] == "A" || texto[i] == "E" || texto[i] == "I" || texto[i] == "O" || texto[i] == "U"){
+                        cadenaVocales.push(texto[i])
+                        }
+
+                        else {
+                        cadenaResto.push(texto[i])
+                        }
+
+                    }
+
+               
+
+                //**2. Recorrer texto resultante y enviar los elementos en distintas arrays. 
+                //Si hay mas vocales que consonantes en el primer array de consonantes se muestra el texto original. 
+                // Si hay mas consonantes en el primer array que vocales se muestra en pantalla el segundo array de consonantes separadas por signo de admiración. 
+
+
+                console.log(cadenaVocales)
+                console.log(cadenaResto)
+
+
+            </script>
+    
+        </body>
+</html>
+        
