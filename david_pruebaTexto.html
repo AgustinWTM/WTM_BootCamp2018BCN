@@ -20,15 +20,23 @@
 
                     }
 
-               
-
                 //**2. Recorrer texto resultante y enviar los elementos en distintas arrays. 
                 //Si hay mas vocales que consonantes en el primer array de consonantes se muestra el texto original. 
                 // Si hay mas consonantes en el primer array que vocales se muestra en pantalla el segundo array de consonantes separadas por signo de admiración. 
-
+                
+                var array1=[]
+                var array2=[]
+                for (i=0; i<cadenaResto.length/2;i++){
+                    array1.push(cadenaResto[i]);
+                }
+                for (i=cadenaResto.length/2; i <cadenaResto.length; i++) {
+                    array2.push(cadenaResto[i]);
+                }
 
                 console.log(cadenaVocales)
                 console.log(cadenaResto)
+                console.log("Primer array de consonantes: " + array1);
+                console.log("Primer array de consonantes: " + array2);
 
 
             </script>
