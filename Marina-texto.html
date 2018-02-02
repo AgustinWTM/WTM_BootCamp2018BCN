@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+
+</head>
+<body>
+
+<script>
+
+	// Crear las variables donde se van a almacenar los contenidos//
+	 var texto ="Hello World"
+	 var vocales = [];
+	 var consonantes = [];
+	 var consonantes1 = [];
+	 var consonantes2 = [];
+
+    
+
+     function textoCalculado (str){
+
+     	// Creamos el primer for donde separaremos las vocales de las consonantes, enviamos las vocales al arreglo vocales//
+     	 for (i = 0; i< str.length; i++){
+
+				if ((str.charAt(i) == "a") || (str.charAt(i) == "A") || 
+				(str.charAt(i) == "e") || (str.charAt(i) == "E") || 
+				(str.charAt(i) == "i") || (str.charAt(i) == "I") || 
+				(str.charAt(i) == "o") || (str.charAt(i) == "O") || 
+				(str.charAt(i) == "u") || (str.charAt(i) == "U")) {
+					vocales.push(str.charAt(i));
+				}
+		// Enviamos las consonantes totales al arreglo consonantes//
+				else{
+					consonantes.push(str.charAt(i));}
+				 }
+				 }
+	         textoCalculado(texto);
+	      // Dividimos el arrelgo consonantes en dos partes iguales, enviamos una copia  a cada arreglo nuevo, conosonantes1 y consonantes2//
+			 var consonantes1 = consonantes.slice(0,consonantes.length/2); 
+			 var consonantes2 = consonantes.slice(consonantes.length/2,consonantes.length);
+    
+			    if (consonantes1.length < vocales.length){
+			    	 document.write( "Hay más vocales que consonates")
+			    }
+			     else {
+			     	document.write( "Hay más consonantes que vocales")
+			     }
+
+
+</script>
+	
+</body>
+</html>
