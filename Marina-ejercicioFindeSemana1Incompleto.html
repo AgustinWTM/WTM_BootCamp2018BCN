@@ -7,7 +7,7 @@
 </head>
 <body>
 
-	<span>Tiempo: </span><span id="segundos">0</span>,<span id="msegundos">0</span><span>s || </span></body> <span> Comprobaciones de dígitos: </span> || <span id="work"></span>
+	<span>Tiempo: </span><span id="segundos">0</span>,<span id="msegundos">0</span><span>s || </span> <span> Comprobaciones de dígitos: </span><span id = "primos"></span> || <span id="work"></span>
 
 	<script>
 
@@ -44,10 +44,9 @@
             
                if(decimal3 < 100 && decimal4 < 100 ){
 	              resultado = decimal1.toString() + decimal2.toString() +decimal3.toString() + decimal4.toString();
-             // no ejecuta este if\\
-	               
+	                document.getElementById("primos").innerHTML = resultado ;
 				}     
-
+               
 			}
 
 		 }
