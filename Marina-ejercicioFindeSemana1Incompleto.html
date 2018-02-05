@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>
+	</title>
+</head>
+<body>
+
+	<span>Tiempo: </span><span id="segundos">0</span>,<span id="msegundos">0</span><span>s || </span></body> <span> Comprobaciones de dígitos: </span> || <span id="work"></span>
+
+	<script>
+
+		
+        // Código correcto 
+		var codigo = 43875;
+		var intentos = prompt(" Inserte el código");
+		 // Creación del cronómetro;
+		var tiempo = setInterval(time,1000);
+		var segundos = 0;
+		var msegundos = 0;
+		var resultado;
+
+       
+		function time(){
+			msegundos++;
+			   document.getElementById("msegundos").innerHTML = msegundos;
+
+		    if(msegundos > 1000){
+		   		segundos++;
+		        document.getElementById("segundos").innerHTML = segundos;
+		    }
+		}
+		// Cálculo para la comprobación de números/ incompleto
+		for(i = 0; i < intentos.length; i++){
+		 	
+			//Paso de hexadecimal a decimal
+            var decimal1 = parseInt(intentos.charAt(i),16);
+            var decimal2 = parseInt(intentos.charAt(i+1),16);
+            var decimal3 = parseInt(intentos.charAt(i+2),16);
+            var decimal4 = parseInt(intentos.charAt(i+3),16);
+          
+            if (primo(decimal1) && primo(decimal3) && primo(decimal4)){
+            
+               if(decimal3 < 100 && decimal4 < 100 ){
+	              resultado = decimal1.toString() + decimal2.toString() +decimal3.toString() + decimal4.toString();
+             // no ejecuta este if\\
+	               
+				}     
+
+			}
+
+		 }
+            
+		// Determinar los números primos 
+      
+	    function primo(n) {
+		 	if (n < 2) return false;
+			var q = Math.floor(Math.sqrt(n));
+			for (var i = 2; i <= q; i++) {
+			 	if (n % i == 0) {
+			 		return false;
+			 	}
+			}
+			return true;
+		}
+
+		// Mostrar work in progress hasta completar el proceso.
+		var promise1 = Promise.resolve("codigo");
+
+			promise1.then(function(time) {
+					  document.getElementById("work").innerHTML = "Work in Progress";
+			
+			});
+
+
+
+	</script>
+	
+</body>
+</html>
