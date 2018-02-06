@@ -14,14 +14,15 @@
 		
         // Código correcto 
 		var codigo = 43875;
-		var intentos = prompt(" Inserte el código");
+		var intentos = parseInt(prompt(" Inserte el código"));
 		 // Creación del cronómetro;
 		var tiempo = setInterval(time,1000);
 		var segundos = 0;
 		var msegundos = 0;
-		var resultado;
+		var resultado= [];
+		var primos = [2, 3, 5, 7, 11,13,17,19,23,29,31,37,41,47,53,59,61,71,73,79,83,89,97];
 
-       
+       // Crono
 		function time(){
 			msegundos++;
 			   document.getElementById("msegundos").innerHTML = msegundos;
@@ -33,39 +34,27 @@
 		}
 		// Cálculo para la comprobación de números/ incompleto
 		for(i = 0; i < intentos.length; i++){
-		 	
-			//Paso de hexadecimal a decimal
-            var decimal1 = parseInt(intentos.charAt(i),16);
-            var decimal2 = parseInt(intentos.charAt(i+1),16);
-            var decimal3 = parseInt(intentos.charAt(i+2),16);
-            var decimal4 = parseInt(intentos.charAt(i+3),16);
-          
-            if (primo(decimal1) && primo(decimal3) && primo(decimal4)){
-            
-               if(decimal3 < 100 && decimal4 < 100 ){
-	              resultado = decimal1.toString() + decimal2.toString() +decimal3.toString() + decimal4.toString();
-	                document.getElementById("primos").innerHTML = resultado ;
-				}     
-               
+			if(primos.indexOf(intentos[0])>= 0){
+				resultado.push(intentos[0])			
 			}
+			resultado.push(intentos[1])
+			if(primos.indexOf(intentos[2]+intentos[3]>=0)){
+				restultado.push(intentos[2]+intentos[3])
+			} else {
+				if((primos.indexOf(intentos[2])>= 0) && (primos.indexOf(intentos[3])>= 0)){
+					resultado.push(intentos[2]+ intentos[3])
 
-		 }
-            
-		// Determinar los números primos 
-      
-	    function primo(n) {
-		 	if (n < 2) return false;
-			var q = Math.floor(Math.sqrt(n));
-			for (var i = 2; i <= q; i++) {
-			 	if (n % i == 0) {
-			 		return false;
-			 	}
+				}
+				else if(primos.indexOf(intentos[4])>= 0){
+					resultado.push(intentos[4])
+				}
+				}
 			}
-			return true;
-		}
+            console.log(resultado);
+	    
 
 		// Mostrar work in progress hasta completar el proceso.
-		var promise1 = Promise.resolve("codigo");
+		var promise1 = Promise.resolve("resultado");
 
 			promise1.then(function(time) {
 					  document.getElementById("work").innerHTML = "Work in Progress";
