@@ -1,69 +1,129 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>
-	</title>
 </head>
-<body>
+	<body>
 
-	<span>Tiempo: </span><span id="segundos">0</span>,<span id="msegundos">0</span><span>s || </span> <span> Comprobaciones de dígitos: </span><span id = "primos"></span> || <span id="work"></span>
+		<div class = dimension>
+		<table  id= "fondo" class = "bordes">
+			<tr>
+			    <th  id ="timerContainer" class = "margenes bordes">Tiempo: <p id="timer" >s</p><s></s></th>
+				<th  id ="refresco" class = " margenes bordes">Número de comprobaciónes: <p id="intentos"></p></th>
+				<th  id="resultado"   class = " margenes bordes">Resultado: Work In Progress</th>
+			
+			</tr>
+		</table> 
+</div>  
 
-	<script>
-
-		
-        // Código correcto 
-		var codigo = 43875;
-		var intentos = parseInt(prompt(" Inserte el código"));
-		 // Creación del cronómetro;
-		var tiempo = setInterval(time,1000);
-		var segundos = 0;
-		var msegundos = 0;
-		var resultado= [];
-		var primos = [2, 3, 5, 7, 11,13,17,19,23,29,31,37,41,47,53,59,61,71,73,79,83,89,97];
-
-       // Crono
-		function time(){
-			msegundos++;
-			   document.getElementById("msegundos").innerHTML = msegundos;
-
-		    if(msegundos > 1000){
-		   		segundos++;
-		        document.getElementById("segundos").innerHTML = segundos;
-		    }
-		}
-		// Cálculo para la comprobación de números/ incompleto
-		for(i = 0; i < intentos.length; i++){
-			if(primos.indexOf(intentos[0])>= 0){
-				resultado.push(intentos[0])			
+    <style>
+		    .dimension{
+			   width: 40%;
+		   }
+		    .bordes {
+    	       border: 1px solid black ;
+    	     
+			   }
+			.margenes {
+				margin: 100px;
+				padding: 20px;
 			}
-			resultado.push(intentos[1])
-			if(primos.indexOf(intentos[2]+intentos[3]>=0)){
-				restultado.push(intentos[2]+intentos[3])
-			} else {
-				if((primos.indexOf(intentos[2])>= 0) && (primos.indexOf(intentos[3])>= 0)){
-					resultado.push(intentos[2]+ intentos[3])
 
-				}
-				else if(primos.indexOf(intentos[4])>= 0){
-					resultado.push(intentos[4])
-				}
-				}
+	</style>
+
+	<script type="text/javascript">
+	// DOM
+	document.getElementById("fondo").style.backgroundColor = "#A0A0A0";
+	
+
+
+		// Generador de codigo
+		var n = "2C733975842A29FF68A984E52198435779CC849A99369754329A89C84693789744C896A95923F55A6894"
+		var generador;
+		var intentos = 0
+		var i;
+		var nueva = i
+		var codigo = [];
+		var tcero = new Date().getTime();
+    
+
+   function condicionador(valor){
+	 if((valor/2 <= 2)) {
+		return false;
+	 }
+	  for ( i=2; i < (valor/2); i++) {
+		if (valor %i == 0) {
+			return false;
+		   }
+	  } 
+	  return true;
+    }
+
+	function contador() {
+			
+			var worker = new show();
+			for (var i=0; i < 999; i++) {
+				 if (condicionador(i)) {
+				 	 codigo.push(i)
+	                 console.log(codigo);
+	                 intentos++
+				 	 worker.refresco(i)
+				 	 
+				 }
+				 else {
+                       intentos++
+				 }
+				   codigo.push(i+1)
+				 if(condicionador((i+2)+(i+3))) {
+				 	 codigo.push(i+2)
+				 	 codigo.push(i+3)
+	                 console.log(codigo);
+	                 intentos++
+				 	 worker.refresco(i);
+
+				 }
+				  else {
+				  	if (condicionador(i+2) && condicionador(i+3)) {
+				 	 codigo.push(i+2)
+				 	 codigo.push(i+3)
+	                 console.log(codigo);
+	                 intentos++
+				 	 worker.refresco(i);
+				   }
+				   else{
+				   	 intentos++
+				   }
+				 }
+
+			 }	
+
+	    } 
+		var show = function() {
+			this.time= document.getElementById("timer");
+			this.resultado= document.getElementById("resultado");
+			this.intentos= document.getElementById("intentos");
+			this.tcero= new Date().getTime();
+			this.refresco= function(iter) {
+				this.time.innerHTML= (new Date().getTime() - tcero);
+				this.resultado.innerHTML=iter;
+				this.intentos.innerHTML= intentos;
+
 			}
-            console.log(resultado);
-	    
 
-		// Mostrar work in progress hasta completar el proceso.
-		var promise1 = Promise.resolve("resultado");
+		} 
+		contador();	
 
-			promise1.then(function(time) {
-					  document.getElementById("work").innerHTML = "Work in Progress";
+		var promise1 = Promise.resolve("codigo");
+
+			promise1.then(function(contador) {
+					  document.getElementById("resultado").innerHTML = "Work in Progress";
 			
 			});
-
-
-
+		
 	</script>
+
+
+
+	</body>
+
 	
-</body>
 </html>
