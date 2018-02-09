@@ -1,0 +1,77 @@
+<!-- He intentado a hacer una aproximación al punto 1 de lo que planteabas como respuesta al ejercicio de david con el evento click (creo que con mas tiempo podria hacerlo para los demas eventos), añadiendole el event listener a todos los elementos que hagan falta solo con un bucle e imprimir el numero de clicks correctamente. El problema viene al imprimir por pantalla el elemento en el que se ha hecho el click. Había pensado identificar el innerHTML de dicho elemento e imprimirlo por pantalla pero no sé bien cómo hacerlo. También necesito un poco más de tiempo para investigar el parametro event porque creo que puede estar relacionado con mi problema. 
+-->
+
+<!DOCTYPE html>
+<meta charset="UTF8">
+<html>
+<head>
+    <title>
+      events
+    </title>
+        <style>
+         table{
+            width: 100%;
+            height: 100%;
+            position: absolute;
+          }
+          tr {
+            display: inline;
+          }
+          td {
+            height: 50px;
+            border: solid;
+            width: 300px;
+          }
+        </style>
+
+          <script>
+
+          function mainFuncLauncher(){
+            var a = document.body.getElementsByTagName("p");
+            var eventDesc = document.getElementById("eventDesc");
+            var count = 0;
+
+            for (i=0; i<a.length; i++){
+              a[i].addEventListener("click", function okclick(){
+              count++;
+              eventDesc.innerHTML = "Has hecho click " + count + " veces"
+              document.getElementById("eventLocation").innerHTML = "En " /* InnerHTML del elemento */ 
+              })
+            }
+         }
+            
+          </script>
+</head>
+  <body onload="mainFuncLauncher()">
+
+  <p>Qué pasa: </p>
+  <p id="eventDesc"></p>    
+  <br>
+  <p>Dónde pasa: </p>
+  <p id="eventLocation"></p>
+  <br>
+  <table>
+    <tr>
+      <td>
+        <p id="a">(A) Haz click aqui</p>
+      </td>
+      <td>
+        <p id="b">(B) Haz click aqui</p>
+      </td>
+      <td>
+        <p id="c">(C) Haz click aqui</p>
+      </td>
+      <td>
+        <p id="a">(D) Haz click aqui</p>
+      </td>
+      <td>
+        <p id="b">(E) Haz click aqui</p>
+      </td>
+      <td>
+        <p id="c">(F) Haz click aqui</p>
+      </td>
+    </tr>
+  </table>
+
+  </body>
+</html>
