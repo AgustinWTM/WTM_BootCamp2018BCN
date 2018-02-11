@@ -24,6 +24,10 @@
   </style>
 <script>
 
+<<<<<<< HEAD
+
+function mostrarResultado(event) {
+=======
   function mainFuncLauncher(){
 
        // Primer apartado letra (a)
@@ -32,11 +36,16 @@
      document.getElementById("muestraUno").addEventListener("mouseover", mostrarResultado);
        
        function mostrarResultado() {
+>>>>>>> 35dcd80ea5e544a80e9085696c0543ff54e6e543
         
         document.getElementById("eventDesc").innerHTML = "El Evento fué:  " + event.type;
         
         document.getElementById("eventLocation").innerHTML = "El target es:"+ event.target.nodeName  + " en la a";
       };
+<<<<<<< HEAD
+
+      function mostrarResultado2(event) {
+=======
        
        
        
@@ -46,6 +55,7 @@
      document.getElementById("muestraDos").addEventListener("mouseout", mostrarResultado2);
        
       function mostrarResultado2() {
+>>>>>>> 35dcd80ea5e544a80e9085696c0543ff54e6e543
         
         document.body.style.backgroundColor = "#42bff4";
         document.getElementById("eventDesc").innerHTML = "El Evento fué:  " + event.type;
@@ -53,6 +63,64 @@
         document.getElementById("eventLocation").innerHTML = "El target es:"+ event.target.nodeName  + " en la b";
     
       };
+<<<<<<< HEAD
+
+      function mostrarResultado3(event) {
+    
+        document.getElementById("eventDesc").innerHTML = "El Evento fué:  " + event.type;
+      
+        document.getElementById("eventLocation").innerHTML = "El target es:"+ event.target.nodeName  + " en la c";
+
+        
+      };
+      function mostrarresultado4 (event){
+        console.log(event.target);
+
+        var new_node = document.createElement('ul');
+
+        for(var i =0 ; i<10; i++){
+
+        var new_node_son = document.createElement('li');
+          new_node_son.innerHTML = '<p>'+i+'</p>'
+          new_node.appendChild(new_node_son);
+        }
+
+        // event.target.removeChild(document.getElementById("linkUse"));
+        event.target.removeChild(event.target.children[0]);
+
+        event.target.appendChild(new_node);
+
+        
+      }
+      function blockJump(event){
+        event.preventDefault();
+      }
+  function mainFuncLauncher(){
+
+       // Primer apartado letra (a)
+      
+      var uno = document.getElementById("muestraUno");
+      var dos = document.getElementById("muestraDos");
+      var tres = document.getElementById("muestraTres");
+      
+      uno.addEventListener("mouseover", mostrarResultado);     
+      uno.addEventListener("mouseout", mostrarResultado2);
+      uno.addEventListener("click", mostrarResultado3);
+   
+
+
+      dos.addEventListener("mouseover", mostrarResultado);
+      dos.addEventListener("mouseout", mostrarResultado2);
+      dos.addEventListener("click", mostrarResultado3);          
+      
+      tres.addEventListener("mouseover", mostrarResultado);
+      tres.addEventListener("mouseout", mostrarResultado2);
+      tres.addEventListener("click", mostrarResultado3);
+      tres.addEventListener("click", mostrarresultado4); 
+      document.getElementById("linkUse").addEventListener("click", blockJump)
+                   
+
+=======
      
      
        // Tercer apartado letra (c)
@@ -67,6 +135,7 @@
         document.getElementById("eventLocation").innerHTML = "El target es:"+ event.target.nodeName  + " en la c";
           alert("FINN!!")
       };
+>>>>>>> 35dcd80ea5e544a80e9085696c0543ff54e6e543
     }
       </script>
 </head>
@@ -87,7 +156,11 @@
       <p>b</p>
     </td>
     <td id="muestraTres"class="centrado">
+<<<<<<< HEAD
+      <p> <a id="linkUse" href="https://worldtechmakers.com"> c</a> </p>
+=======
       <p >c</p>
+>>>>>>> 35dcd80ea5e544a80e9085696c0543ff54e6e543
     </td>
   </tr>
 </table>
