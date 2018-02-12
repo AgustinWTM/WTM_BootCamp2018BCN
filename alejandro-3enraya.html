@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<meta charset="UTF8">
+<html>
+  <head>
+    <title>
+      3 en raya
+    </title>
+    <style>
+
+    p{
+      width: 900px;
+      height: 25px;
+      font-size: 35px;
+      text-align: center;
+    }
+    table{
+       width: 900px;
+       height: 900px;
+       position: absolute;
+     }
+     tr {
+       display: inline;
+     }
+     td {
+       height: 300px;
+       border: solid;
+       width: 300px;
+     }
+     .playerSlot {
+       background-color: red;
+     }
+     .foeSlot {
+       background-color: blue;
+     }
+
+     .void {
+       background-color: grey;
+     }
+
+    </style>
+    <script>
+      console.log("---------- 3 EN RAYA ---------- ")
+
+      var playerSlotSelections = [];
+      var foeSlotSelections = [];
+      var tableroActual = [ , ,  
+                            , ,  
+                            , ,  ]
+
+      
+
+      function determinateVictory(){
+
+
+        //Casos de Victoria:
+        if (( document.getElementById("1").className == "playerSlot" && document.getElementById("2").className == "playerSlot" &&
+              document.getElementById("3").className == "playerSlot") || 
+
+             (document.getElementById("1").className == "playerSlot" && document.getElementById("4").className == "playerSlot" &&
+              document.getElementById("7").className == "playerSlot") || 
+
+             (document.getElementById("2").className == "playerSlot" && document.getElementById("5").className == "playerSlot" &&
+              document.getElementById("8").className == "playerSlot") ||
+
+             (document.getElementById("3").className == "playerSlot" && document.getElementById("3").className == "playerSlot" &&
+              document.getElementById("9").className == "playerSlot") ||
+            
+             (document.getElementById("4").className == "playerSlot" && document.getElementById("5").className == "playerSlot" &&
+              document.getElementById("6").className == "playerSlot") || 
+
+             (document.getElementById("7").className == "playerSlot" && document.getElementById("8").className == "playerSlot" &&
+              document.getElementById("9").className == "playerSlot") || 
+
+             (document.getElementById("1").className == "playerSlot" && document.getElementById("5").className == "playerSlot" &&
+              document.getElementById("9").className == "playerSlot") || 
+
+             (document.getElementById("3").className == "playerSlot" && document.getElementById("5").className == "playerSlot" &&
+              document.getElementById("7").className == "playerSlot"))
+        {
+          alert("Human win!")
+        }
+
+        else if 
+           (( document.getElementById("1").className == "floeSlot" && document.getElementById("2").className == "floeSlot" &&
+              document.getElementById("3").className == "floeSlot") || 
+
+             (document.getElementById("1").className == "floeSlot" && document.getElementById("4").className == "floeSlot" &&
+              document.getElementById("7").className == "floeSlot") || 
+
+             (document.getElementById("2").className == "floeSlot" && document.getElementById("5").className == "floeSlot" &&
+              document.getElementById("8").className == "floeSlot") ||
+
+             (document.getElementById("3").className == "floeSlot" && document.getElementById("3").className == "floeSlot" &&
+              document.getElementById("9").className == "floeSlot") ||
+            
+             (document.getElementById("4").className == "floeSlot" && document.getElementById("5").className == "floeSlot" &&
+              document.getElementById("6").className == "floeSlot") || 
+
+             (document.getElementById("7").className == "floeSlot" && document.getElementById("8").className == "floeSlot" &&
+              document.getElementById("9").className == "floeSlot") || 
+
+             (document.getElementById("1").className == "floeSlot" && document.getElementById("5").className == "floeSlot" &&
+              document.getElementById("9").className == "floeSlot") || 
+
+             (document.getElementById("3").className == "floeSlot" && document.getElementById("5").className == "floeSlot" &&
+              document.getElementById("7").className == "floeSlot"))
+        {
+          alert("Software win!")
+        }
+      }
+
+
+      function updateCellClass(targetClass, classUse){
+
+      }
+
+      function jugada(event){
+       var target = event.target
+       target.removeClass
+       target.classList.remove('void');
+       target.classList.add("playerSlot")
+       playerSlotSelections.push(target);
+       determinateVictory();
+       respuestaMaquina();
+       function respuestaMaquina (event){
+        for(i=0; i<playerSlotSelections.length; i++)
+        if (playerSlotSelections[i].className == "playerSlot"){
+          playerSlotSelections[i+1].classList.add("foeSlot")
+        }
+
+        }
+
+      }
+    
+
+      function mainFuncLauncher(){
+        // 1. Poner a las 9 casillas del tablero a escuchar el evento click para que responda cambiando la clase a ese elemento
+        var casillas = document.getElementsByTagName("td");
+        for (i=0; i<casillas.length ; i++){
+          casillas[i].addEventListener("click", jugada);
+          casillas[i].classList.add('void');
+        }
+      }
+    </script>
+  </head>
+  <body onload="mainFuncLauncher()">
+    <p id="gameResult"></p>
+    <table>
+      <tr>
+        <td data-fila = "1" data-pos ="1" id="1">
+        </td>
+        <td data-fila = "1" data-pos ="2" id="2">
+        </td>
+        <td data-fila = "1" data-pos ="3" id="3">
+        </td>
+      </tr>
+      <tr>
+        <td data-fila = "2" data-pos ="1" id="4">
+        </td>
+        <td data-fila = "2" data-pos ="2" id="5">
+        </td>
+        <td data-fila = "2" data-pos ="3" id="6">
+        </td>
+      </tr>
+      <tr>
+        <td data-fila = "3" data-pos ="1" id="7">
+        </td>
+        <td data-fila = "3" data-pos ="2" id="8">
+        </td>
+        <td data-fila = "3" data-pos ="3" id="9">
+        </td>
+      </tr>
+    </table>
+  </body>
+</html>
