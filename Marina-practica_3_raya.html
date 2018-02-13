@@ -38,6 +38,9 @@
 			var playerSlotSelections = [];
 			var foeSlotSelections = [];
 			var victoriesArray = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
+			var tableroActual = [ , ,  
+                            , ,  
+                            , ,  ];
              
 
 		function determinateVictory(slotCheck, winner){
@@ -79,7 +82,7 @@
                   if(event.innerText == "X"){
                 // Ahora se puede quitar un elemento de foeSlotSelections
 			    //  var index = foeSlotSelections.indexOf(event.id);
-			    //   foeSlotSelections.splice(index,1);  
+			    //    foeSlotSelections.splice(index,1);  
 		 
                   }
                 }
@@ -94,8 +97,8 @@
 				determinateVictory(playerSlotSelections, "Humano");
 				if(event.innerText == "O"){
                 // Ahora se puede quitar un elemento de playerSlotSelections
-				// var index = playerSlotSelections.indexOf(event.id);
-				// playerSlotSelections.splice(index,1); 
+				// var index1 = playerSlotSelections.indexOf(event.id);
+				// playerSlotSelections.splice(index1,1); 
 
                   }
 				}
@@ -114,14 +117,19 @@
             }
 			// Funcion Ordenador
 	     
-        //    function computerMove(){
-		// 	 if (vacio.length>0) {
-		// 		var r = Math.floor((Math.random()*vacio.length));
-		// 		return vacio[r];
-		// 		} 
-		// 		else return false;
-		// 	}
-			
+			function computerMove() {
+					var vacio = [];
+					var random;
+			}
+			celda.forEach(function(celda){
+					if (cell.textContent == '') {
+					vacio.push(celda);
+					}
+				});
+				random = Math.ceil(Math.random() * vacio.length) - 1;
+					vacio[random].textContent = mark;
+					determinateVictory();
+					switchTurn();
 
 
             // Determina de quién es el turno
