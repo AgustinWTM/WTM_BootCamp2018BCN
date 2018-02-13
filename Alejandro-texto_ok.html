@@ -1,5 +1,5 @@
 <!-- Cosas que no he podido hacer
-		1. Ordenar el array de vocales 
+		1. Ordenar el array de vocales
 		2. Separar el array mitad2 con "!" en caso de que linea 43 = false-->
 
 <!DOCTYPE html>
@@ -10,8 +10,8 @@
 <body>
 	<script type="text/javascript">
 		var txt = "pjjjjjjjjjjjjjjjjjjjjjjj";
-		//1. Dado el texto, extraer todas las vocales y montarlas en un array. 
-		//   Comparar cada letra del txt y si es una vocal mandarla a array_vocales y si no mandarla a texto_resultante. 
+		//1. Dado el texto, extraer todas las vocales y montarlas en un array.
+		//   Comparar cada letra del txt y si es una vocal mandarla a array_vocales y si no mandarla a texto_resultante.
 		var array_vocales = [];
 		var texto_resultante = [];
 				for (i = 0; i < txt.length; i++)
@@ -23,32 +23,42 @@
 						texto_resultante.push(txt[i])
 					}
 				}
-		//2. Dividir el texto resultante (consonantes) en dos arrays de igual tamaño. 
+		//2. Dividir el texto resultante (consonantes) en dos arrays de igual tamaño.
 		var mitad1 = [];
 		var mitad2 = [];
 		for (i = 0; i < texto_resultante.length/2; i++){
-		mitad1.push(texto_resultante[i]); 
+		mitad1.push(texto_resultante[i]);
 		}
 		for (i = texto_resultante.length/2; i < texto_resultante.length; i++){
-		mitad2.push(texto_resultante[i]); 
+		mitad2.push(texto_resultante[i]);
 		}
-		//3. ¿Cuántas vocales hay? 
+		//3. ¿Cuántas vocales hay?
 		console.log("Array de vocales (sin ordenar): " + array_vocales)
 		console.log("Numero de vocales: " + array_vocales.length)
 		console.log("Primera mitad de consonantes: " + mitad1)
 		console.log("Numero de consonantes en la primera mitad: " + mitad1.length)
 		console.log("Segunda mitad de consonantes: " + mitad2)
 		console.log("Numero de consonantes en la segunda mitad: " + mitad2.length)
-		//4. Si hay más vocales en array_vocales que consonantes en mitad1, entonces mostrar el texto original. 
+
+		function array_work(content){
+			this.array_text = content;
+			this.computer = function(){
+				var mitad3 = "";
+				for (i=0; i<this.array_text.length; i++){
+					mitad3 = (mitad3 + this.array_text[i] + "!");
+				}
+				return mitad3;
+			}
+		}
+		//4. Si hay más vocales en array_vocales que consonantes en mitad1, entonces mostrar el texto original.
 		if (array_vocales.length > mitad1.length){
 			console.log("Hay mas vocales que consonantes en el primer array de consonantes, por tanto muestro el texto:\n\n" + txt)
 		}
 		else{
-			var mitad3 = "";
-			for (i=0; i<mitad2.length; i++){
-				mitad3 = (mitad3 + mitad2[i] + " !");
-			}
-			console.log("Hay menos vocales que consonantes en el primer array de consonantes, por tanto muestro el segundo array (sin signos de admiracion porque no he sabido hacerlo\n\n" + mitad3)
+
+var final = new array_work(mitad2);
+		console.log(new array_work(mitad2));
+			console.log(new array_work(mitad2).computer());
 		}
 	</script>
 </body>

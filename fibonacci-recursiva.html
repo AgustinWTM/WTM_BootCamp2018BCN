@@ -6,23 +6,18 @@
 <br>
 <p id="r2"></p>
 <script>
-var resultado;
-var iters = 0;
-// Si un numero dado es primo
-function primo(num, x)
-{
-	// El numero dado es la informacion menos correcta.
-iters++;
-	if (num % x == 0){
-		return false;
+var resultado = function() {
+	var b = 0;
+	for(var i = 0; i < 10; i++){
+		b+=i;
 	}
-	else if(x > 2){
-		return primo(num, --x);
-	}
-	return true;
+	return b;
 }
-document.getElementById("r1").innerHTML = primo(9494, 494);
-document.getElementById("r2").innerHTML = iters;
+var iters = '2';
+
+
+document.getElementById("r1").innerHTML = resultado;
+document.getElementById("r2").innerHTML = resultado();
 </script>
 </body>
 </html>

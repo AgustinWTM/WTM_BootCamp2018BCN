@@ -13,21 +13,27 @@ var pila = [1, 2, 3, 4]
 var a = 100;
 var b = 100;
 
-var f = function(g) {
-  console.log('g', g);
-  var z = 0;
-  if((g % 2 == 0) || (g < 7)){
-    z = g * 2;
+// var f = function(g) {
+//   console.log('g', g);
+//   var z = 0;
+//   if((g % 2 == 0) || (g < 7)){
+//     z = g * 2;
+//   }
+//     console.log('z', z);
+//   return z;
+// }
+
+
+function recu(value){
+  console.log(value);
+  if(value.pop() == 2){
+    return value;
+  }else {
+    return recu(value)
   }
-    console.log('z', z);
-  return z;
 }
 
-var x = 0
-
-for(let i = 0; i < 10; i++){
-  x += f(i);
-}
+var x = 5+8
 
 document.getElementById("r1").innerHTML = x;
 document.getElementById("r2").innerHTML = pila;
