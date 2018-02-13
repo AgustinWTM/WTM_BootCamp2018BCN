@@ -37,13 +37,14 @@
 		<script>
 			var playerSlotSelections = [];
 			var foeSlotSelections = [];
-			var victoriesArray = [[1,2,3],[4,5,6],[7,8,9],[1,4,7],[2,5,8],[3,6,9],[1,5,9],[3,5,7]];
-             
+			var victoriesArray = [{},
+			{},
+		{}];
 
 		function determinateVictory(slotCheck, winner){
 			console.log("determinateVictory");
 				var result = victoriesArray.findIndex(function (vsize){
-				return (vsize.includes(parseInt(slotCheck[0],10)) && 
+				return (vsize.includes(parseInt(slotCheck[0],10)) &&
 				vsize.includes(parseInt(slotCheck[1],10)) && vsize.includes(parseInt(slotCheck[2],10)));
 				});
 				console.log("result",result);
@@ -52,76 +53,75 @@
 					victoria(winner);
 				}else{
 					return 0;
-					
-				}		
+
+				}
          }
 		function victoria(winner){
            document.getElementById("GameVictory").innerHTML = "¡Victoria! de " + winner;
          }
 			function updateCellClass(targetClass, classUse){
-                
+
                 document.getElementById(targetClass).classList.add(classUse)
 
-                
+
 			}
 		function manageClick(event){
                 event.innerText = document.turn;
-      
+
             // Verificació de número de jugadas por jugador
-             if( document.turn == "X"){   
+             if( document.turn == "X"){
 		       updateCellClass(event.id,"foeSlot");
-			   
+
                 if (foeSlotSelections.length == 3){
-					
+
                 }else{
                   foeSlotSelections.push(event.id);
 				  determinateVictory(foeSlotSelections, "Computer");
                   if(event.innerText == "X"){
                 // Ahora se puede quitar un elemento de foeSlotSelections
 			    //  var index = foeSlotSelections.indexOf(event.id);
-			    //   foeSlotSelections.splice(index,1);  
-		 
+			    //   foeSlotSelections.splice(index,1);
+
                   }
                 }
-            
+
              }else if (document.turn == "O"){
                 updateCellClass(event.id,"playerSlot");
-				
+
                 if (playerSlotSelections.length == 3){
-					
+
                 }else{
                 playerSlotSelections.push(event.id);
 				determinateVictory(playerSlotSelections, "Humano");
 				if(event.innerText == "O"){
                 // Ahora se puede quitar un elemento de playerSlotSelections
 				// var index = playerSlotSelections.indexOf(event.id);
-				// playerSlotSelections.splice(index,1); 
+				// playerSlotSelections.splice(index,1);
 
                   }
 				}
-             } 
-            // Llamar a la función cambio de turno.    
-                switchTurn();          
+             }
+            // Llamar a la función cambio de turno.
+                switchTurn();
 			}
 			function mainFuncLauncher(){
                 document.turn ="O";
                 setMessage(document.turn + " Empieza.")
-				  
+
 			}
             // Función que nos mostrará lo mensajes en pantalla
             function setMessage(msg) {
                document.getElementById("gameResult").innerText = msg;
             }
 			// Funcion Ordenador
-	     
-        //    function computerMove(){
-		// 	 if (vacio.length>0) {
-		// 		var r = Math.floor((Math.random()*vacio.length));
-		// 		return vacio[r];
-		// 		} 
-		// 		else return false;
-		// 	}
-			
+
+           function computerMove(){
+			 if (vacio.length>0) {
+				 return true;
+				}
+				else return false;
+			}
+
 
 
             // Determina de quién es el turno
@@ -133,15 +133,15 @@
                     document.turn = "X";
                 }
                 setMessage (" Es el turno de: "+ document.turn + "")
-			
-            }   
+
+            }
 
 		</script>
 	</head>
 	<body onload="mainFuncLauncher()">
 		<p id="gameResult"></p>
 		<p id="GameVictory"></p>
-		
+
 		<table>
 			<tr>
 				<td  id="1" onclick="manageClick(this);">
@@ -160,7 +160,7 @@
 				</td>
 			</tr>
 			<tr>
-				<td id="7" onclick="manageClick(this);"> 
+				<td id="7" onclick="manageClick(this);">
 				</td>
 				<td  id="8"onclick="manageClick(this);">
 				</td>
