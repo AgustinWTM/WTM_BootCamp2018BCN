@@ -24,8 +24,8 @@ var section1 = function(){
   };
   this.section1Node = function(nodeCurrent){
     return '<div class="relativeLocation" id="'+nodeCurrent.blockId+'">'+
-                      '<img src="'+nodeCurrent.imgSRC+'">'+
-                      '<p class="'+nodeCurrent.textClass+'">'+nodeCurrent.text+'</p>'+
+                      '<img class="'+nodeCurrent.textClass+'" src="'+nodeCurrent.imgSRC+'">'+
+                      '<p>'+nodeCurrent.text+'</p>'+
                     '</div>';
   };
   return this;

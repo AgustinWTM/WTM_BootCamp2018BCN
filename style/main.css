@@ -1,0 +1,19 @@
+.relativeLocation{
+  width: 220px;
+  position: relative;
+  float: left;
+  background: gray;
+}
+.classTipeA {
+  width: 200px;
+  height: 200px;
+  position: relative;
+  float: left;
+}
+
+.shad1{
+background: blue;
+}
+.shad2{
+background: red;
+}
