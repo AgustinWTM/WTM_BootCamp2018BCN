@@ -1,17 +1,16 @@
 
-                      var section2 = function(worker){
+var section2 = function(){
 
-this.worker = worker;
-                        this.data1x= [{
-                                        'img': "resources/imgA.jpg",
-                                        'classUse': 'classTipeA',
-                                        'name':'Imagen A'
-                                      },
-                                {
-                                                'img': "resources/imgB.jpg",
-                                                'classUse': 'classTipeA',
-                                                'name':'Imagen B'
-                                              }]
+  this.data1x= [{
+                  'img': "resources/imgA.jpg",
+                  'classUse': 'classTipeA',
+                  'name':'Imagen A'
+                },
+          {
+                          'img': "resources/imgB.jpg",
+                          'classUse': 'classTipeA',
+                          'name':'Imagen B'
+                        }]
 
   this.createSectionElements = function(parentNode){
     parentUl = document.createElement('ul');
@@ -37,10 +36,10 @@ this.worker = worker;
   this.descriptionBuilder = function(index){
     var desc1 = document.createElement('p');
 
-      var sectionxLogic = this.worker;
+      var sectionxLogic = new section1();
       sectionxLogic.procesateDataInput(this.data1x);
 
-    desc1.innerHTML = section1Logic.drawCollection();
+    desc1.innerHTML = sectionxLogic.drawCollection();
     desc1.id = 'desc_'+index;
     desc1.classList.add('desc1Class');
     return desc1;
