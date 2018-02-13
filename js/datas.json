@@ -1,0 +1,6 @@
+data = {
+                'img': "resources/imgA.jpg",
+                'name':'Imagen A',
+                'description':'jshdf gsliu ghsdrsdligu dfkj ghfdjh gdj hgvdrkjh drskjh dhg drfhg dsrg',
+                'reference': 'http:google.es'
+              }
