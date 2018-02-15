@@ -1,4 +1,4 @@
-function HugePicManager (){
+var HugePicManager = function (){
     this.img;
     this.name;
     this.description;
@@ -21,8 +21,13 @@ function HugePicManager (){
        ref.innerHTML = this.reference;
        document.getElementById("section2").appendChild(ref);
     }
+
+    return this;
 }
-
-
-
-
+function prueba(){
+  var hugePic = new HugePicManager()
+  hugePic.initPic("resources/imgA.jpg","foto1","hola descripcion","www.google.com")
+  console.log(hugePic);
+  hugePic.showPic();
+  return 0;
+}
