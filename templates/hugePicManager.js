@@ -23,10 +23,6 @@ function HugePicManager (){
     }
 }
 
-//función prueba 
-// var hugePic = new HugePicManager()
-// hugePic.initPic("resources/imgA.jpg","foto1","hola descripcion","www.google.com")
-// console.log(hugePic);
-// hugePic.showPic();
+
 
 
