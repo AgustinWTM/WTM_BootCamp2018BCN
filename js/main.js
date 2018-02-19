@@ -1,5 +1,1 @@
-function sendData(){
- infoTransferenceController();
-}
-
-sendData();
+import data from "js/datas.json"
