@@ -1,6 +1,4 @@
-function infoTransferenceController() {
-   console.log('Soy el info transfereceController');
-} 
-
-hugePicManager(datos);
-tinyPicManager(datos);
+var infoTransferenceController = function(data){
+	var newHuge = new HugePicManager(data.img,data.name,data.description,data.reference);
+	newHuge.showPic()
+}
