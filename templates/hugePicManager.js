@@ -1,9 +1,9 @@
 
  class HugePicManager{
- 
+
    showPic(nodeData){
        let img = document.createElement("img");
-       img.setAttribute("src", nodeData.imgSRC); 
+       img.setAttribute("src", nodeData.imgSRC);
        document.getElementById("section2").appendChild(img);
 
        let name = document.createElement("h3");
@@ -20,12 +20,3 @@
     }
 
  }
-
-
- function prueba(){
-  let hugePic = new HugePicManager()
-  let hugPic2 = new nodeDataObject ("resources/imgA.jpg","foto1","hola descripcion","www.google.com")
-  console.log(hugePic);
-  hugePic.showPic(hugPic2);
-  return 0;
-}

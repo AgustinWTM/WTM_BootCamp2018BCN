@@ -1,6 +1,23 @@
-data = {
-                'img': "resources/imgA.jpg",
+data = [{
+                'imgSRC': "resources/imgA.jpg",
                 'name':'Imagen A',
                 'description':'jshdf gsliu ghsdrsdligu dfkj ghfdjh gdj hgvdrkjh drskjh dhg drfhg dsrg',
-                'reference': 'http:google.es'
-              }
+                'reference': 'http:google.es'},
+
+                {'imgSRC': "resources/imgA.jpg",
+                'name':'Imagen B',
+                'description':'jshdf gsliu ghsdrsdligu dfkj ghfdjh gdj hgvdrkjh drskjh dhg drfhg dsrg',
+                'reference': 'http:google.es'},
+
+                {'imgSRC': "resources/imgA.jpg",
+                'name':'Imagen C',
+                'description':'jshdf gsliu ghsdrsdligu dfkj ghfdjh gdj hgvdrkjh drskjh dhg drfhg dsrg',
+                'reference': 'http:google.es'},
+
+                {'imgSRC': "resources/imgA.jpg",
+                'name':'Imagen D',
+                'description':'jshdf gsliu ghsdrsdligu dfkj ghfdjh gdj hgvdrkjh drskjh dhg drfhg dsrg',
+                'reference': 'http:google.es'}
+              ]
+
+              
