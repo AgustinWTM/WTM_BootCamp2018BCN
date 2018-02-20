@@ -22,7 +22,6 @@
  }
 
 
-
  function prueba(){
   let hugePic = new HugePicManager()
   let hugPic2 = new nodeDataObject ("resources/imgA.jpg","foto1","hola descripcion","www.google.com")
