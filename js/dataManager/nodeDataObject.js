@@ -28,7 +28,6 @@ class nodeDataObject{
         return this.options;
       }
 
-
       setNombre(name){
         this.name = name;
       }
@@ -48,7 +47,8 @@ class nodeDataObject{
       setOptions(options){
         this.options = options;
       }
-  
+    
+    
 }
+      
 
-console.log(nodeDataObject);
