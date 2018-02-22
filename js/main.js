@@ -1,7 +1,9 @@
 var main_bootcamps = {
 
     init: function(){
-     new infoTransferenceController(data);
+     var newInfo = new infoTransferenceController(data);
+     newInfo.init();
+
     }
   };
   function mainPageLoader(){

@@ -2,10 +2,11 @@ class nodeDataObject{
     constructor(name,imgSRC,type,description,origin,options){
         this.name = name;
         this.imgSRC = imgSRC;
+        this.type = type;
         this.description = description;
         this.origin = origin;
         this.options =[];
-       
+      
       }
      
       getName(){
@@ -22,6 +23,10 @@ class nodeDataObject{
 
       getOrigin(){
         return this.origin;
+      }
+
+      getType(){
+        return this.type; 
       }
 
       getOptions(){
@@ -47,6 +52,11 @@ class nodeDataObject{
       setOptions(options){
         this.options = options;
       }
+
+      setType(type){
+        this.type = type; 
+      }
+
     
     
 }

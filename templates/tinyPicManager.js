@@ -1,53 +1,18 @@
-var tinyPicManager = function (img,name){
+class tinyPicManager{
+  constructor(s1){
+    this.s1 = s1; 
+  }
 
-      this.listaCollection = [];
-      this.img = img;
-      this.name = name;
-
-      this.showPic = function(){
-        for (let x of this.listaCollection){
-
-         var img = document.createElement("img");
-         img.setAttribute("src", x.img);
-         document.getElementById("section1").appendChild(img);
-
-         var name = document.createElement("h2");
-         name.innerHTML = x.name;
-         document.getElementById("section1").appendChild(name);
-        }
-         return this.listaCollection;
-      };
-
-      this.procesate = function (coleccion){
-        var coleccionSize = coleccion.length;
-        for (var i = 0; i < coleccionSize; i++) {
-          this.listaCollection.push({"img":coleccion[i].img, "name":coleccion[i].name});
-
-        }
-      return 0;
-    };
-
-      return this;
-    };
+  showPic(node, evento){
+    var img = document.createElement("img");
+         img.setAttribute("src", node.imgSRC);
+         img.addEventListener("click", evento )
+         this.s1.appendChild(img);
+         
+  }
 
 
-    this.carrusel = function() {
-        var html = "";
-        var coleccionSize = listaCollection.lenght;
-        for(var i = 0; i<coleccionSize; i++){
-          html = html + this.section1Nodo(this.listaCollection[i]);
-
-        }
-      return html;
-
-    };
-
-
-function prueba2(){
-  var tinyPic = new tinyPicManager("resources/imgA.jpg","foto1")
-
-  console.log(tinyPic);
-  tinyPic.procesate(data);
-  tinyPic.showPic();
-  return 0;
+  
 }
+
+      

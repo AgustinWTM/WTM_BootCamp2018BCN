@@ -7,11 +7,14 @@ class infoTransferenceController {
     this.data = data;
   }
   init(){
-    tinyLogic.procesate(this.data, this.eventos);
+    var myself = this;
+    this.tinyLogic.procesate(this.data, function(node){
+      myself.evento(node);
+
+    });
   }
-  eventos(node){
+  evento(node){
     this.newHuge.showPic(node);
   }
-
-
+  
 }
