@@ -1,19 +1,35 @@
-.relativeLocation{
-  width: 220px;
-  position: relative;
-  float: left;
-  background: gray;
+body {
+  height: 100%;
+  width: 100%;
+  display: block;
 }
-.classTipeA {
-  width: 200px;
-  height: 200px;
-  position: relative;
-  float: left;
-}
+  /* .relativeLocation{
+    width: 220px;
+    position: relative;
+    float: left;
+    background: gray;
+  } */
 
-.shad1{
-background: blue;
-}
-.shad2{
-background: red;
+  .classTipeA {
+    height: 200px;
+    position: relative;
+    display: inline-block;
+    float: left;
+  }
+
+  .section1MainClass{
+    height: 220px;
+    position: relative;
+    width: 100%;
+    border: 3px red solid;
+    overflow: auto;
+
+  }
+
+  .section2MainClass{
+    height: 80%;
+    border-style: solid;
+    position: relative;
+    float: left;
+    width: 100%;
 }
