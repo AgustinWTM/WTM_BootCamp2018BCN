@@ -3,30 +3,32 @@
    constructor(s2) {
      this.s2 = s2;
    }
- 
+
    showPic(nodeData){
+       let div = document.createElement("div");
+       div.classList.add("imgGrande");
+
+
        let img = document.createElement("img");
-       img.setAttribute("src", nodeData.imgSRC); 
-       this.s2.appendChild(img);
+       img.setAttribute("src", nodeData.imgSRC);
+       div.appendChild(img);
 
        let name = document.createElement("h3");
        name.innerHTML = nodeData.name;
-       this.s2.appendChild(name);
+       div.appendChild(name);
 
        let desc = document.createElement("p");
        desc.innerHTML = nodeData.description;
-       this.s2.appendChild(desc);
+       div.appendChild(desc);
 
        let or = document.createElement("p");
        or.innerHTML = nodeData.origin;
-       this.s2.appendChild(or);
+       div.appendChild(or);
 
        let op = document.createElement("p");
        op.innerHTML = nodeData.options;
-       this.s2.appendChild(op);
+       div.appendChild(op);
 
+       s2.appendChild(div);
     }
  }
-
-
-
